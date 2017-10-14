@@ -1,6 +1,22 @@
 class MessagesController < ApplicationController
-  def index
+  def inbox
+    @active = :inbox
   end
-  def show
+
+  def sent
+    @active = :sent
   end
+
+  def trash
+    @active = :trash
+  end
+
+  def important
+    @active = :important
+  end
+
+  def drafts
+    @active = :drafts
+  end
+
 end

@@ -1,39 +1,7 @@
 <div class="container">
   <div class="mail-box">
-    <aside class="sm-side" id="left-side">
-      <%= render "modal-compose"%>
-      <ul class="inbox-nav inbox-divider">
-        <li>
-          <a href="inbox">
-            <i class="fa fa-inbox"></i>
-            Inbox
-            <span class="label label-danger pull-right">2</span>
-          </a>
-        </li>
-        <li class="active">
-          <a href="sent">
-            <i class="fa fa-rocket"></i>
-            Sent Mail
-            <span class="label label-info pull-right">30</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-bookmark-o"></i>
-            Important</a>
-        </li>
-        <li>
-          <a href="#">
-            <i class=" fa fa-external-link"></i>
-            Drafts</a>
-        </li>
-        <li>
-          <a href="#">
-            <i class=" fa fa-trash-o"></i>
-            Trash</a>
-        </li>
-      </ul>
-    </aside>
+  <%= render "modal-showmess"%>
+<%= render partial: 'left-side' %>
     <aside class="lg-side">
       <div class="inbox-head">
         <h3>Sent Mail</h3>

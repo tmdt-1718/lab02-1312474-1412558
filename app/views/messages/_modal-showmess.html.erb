@@ -1,0 +1,51 @@
+
+  <div class="inbox-body">
+    <a href="#myModal-showMess" data-toggle="modal" title="Mess" class="btn btn-compose">
+      Show Messages
+    </a>
+    <!-- Modal -->
+    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal-showMess" class="modal fade" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 class="modal-title">Detailed Messages</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" class="form-horizontal">
+              <div class="form-group">
+                <label class="col-lg-2 control-label">From</label>
+                <div class="col-lg-10">
+                  <label class="control-label"><a href="#">Admin</a></label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label">To</label>
+                <div class="col-lg-10">
+                  <label class="control-label"><a href="#">Kuga</a></label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Subject</label>
+                <div class="col-lg-10">
+                  <label class="control-label">Welcome</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Message</label>
+                <div class="col-lg-10">
+                  <textarea rows="10" cols="30" class="form-control" id="txtMess" name=""></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+  </div>
