@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :conversations do
+    resources :messages
+  end
 root 'messages#inbox'
 
 get 'messages/inbox', to: 'messages#inbox', as: :messages_inbox

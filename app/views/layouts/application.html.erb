@@ -21,4 +21,22 @@
         <%= yield %>
       </div>
   </body>
+  <script>
+  $(document).ready(function(){
+    $('table > tbody > tr').on('click', function(){
+      var data = $(this).attr('data-id')
+      alert(data)
+      data = $("#lbfrom").text();
+      alert(data)
+
+      
+      $("#myModal-showMess").modal();
+
+    //  alert($(this).closest('tr').find('td:first').text());
+
+    //if(data == 'something'){
+        //Do something
+    })
+  });
+  </script>
 </html>
