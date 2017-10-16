@@ -18,5 +18,8 @@ class MessagesController < ApplicationController
   def drafts
     @active = :drafts
   end
-
+  def show
+    #if params[:mess_id].blank?
+    "hgfjhgjhjghjghjgh"
+  end
 end
