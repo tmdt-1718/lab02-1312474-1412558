@@ -1,16 +1,45 @@
-<h2>Resend confirmation instructions</h2>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Login/Logout animation concept</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+    <link rel="stylesheet" href="/stylesheets/style.scss">
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+    <link href="<%= image_path("logo.png") %>" rel="shortcut icon" />
 
-<%= render "devise/shared/links" %>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="demo">
+        <div class="login">
+          <div class="login__form">
+            <div class="login_check">
+              <img src="<%= image_path("logo.png") %>" style="width:200px; height:200px;">
+            </div>
+            <div class="signup__row">
+              <h2>Resend confirmation instructions</h2>
+              <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+                <%= devise_error_messages! %>
+
+                <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Resend confirmation instructions" %>
+                </div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
