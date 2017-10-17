@@ -1,59 +1,47 @@
 <title><%= @page_title %></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <%= render "shared/header"%>
-    <div class="content">
-        <div class="container-fluid">
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
- </div>
- <div class="container-fluid">
-<%= yield %>
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <% flash.each do |key, value| %>
+   <div class="<%= flash_class(key) %> fade in">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <%= value %>
+   </div>
+<% end %>
+<%= render "shared/header"%>
+<div class="content">
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
 </div>
+<%= render "shared/footer"%>
+</body>
+<script>
+$(document).ready(function () {
+  $('table > tbody > tr').on('click', function () {
+    var mess_id = $(this).attr('data-id')
+    alert(mess_id)
+    mess_id = $("#lbfrom").text("daaaaaaaaaaa");
+    alert(mess_id)
 
+    //   $.ajax({   url: "/messages/show",   type: "GET",   dataType: "script",   data: {"mess_id": mess_id},   success: function(){     alert("ok"); }) });
+    $("#myModal-showMess").modal();
 
-    </div>
-
-    <%= render "shared/footer"%>
-  </body>
-  <script>
-  $(document).ready(function(){
-    $('table > tbody > tr').on('click', function(){
-      var mess_id = $(this).attr('data-id')
-      alert(mess_id)
-      mess_id = $("#lbfrom").text("daaaaaaaaaaa");
-      alert(mess_id)
-
-    //   $.ajax({
-    //   url: "/messages/show",
-    //   type: "GET",
-    //   dataType: "script",
-    //   data: {"mess_id": mess_id},
-    //   success: function(){
-    //     alert("ok");
-    // })
-    // });
-      $("#myModal-showMess").modal();
-
-    //  alert($(this).closest('tr').find('td:first').text());
-
-    //if(data == 'something'){
-        //Do something
-    })
-  });
-  </script>
+    //  alert($(this).closest('tr').find('td:first').text()); if(data == 'something'){ Do something
+  })
+});
+</script>
 </html>
