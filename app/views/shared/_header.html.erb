@@ -1,0 +1,48 @@
+<header>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">LAB02</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+
+          <li>
+            <a href="/home">
+              <span class="fa fa-home"></span>Home</a>
+          </li>
+
+          <li>
+            <a href="/messages/inbox">
+              <span class="fa fa-envelope"></span>Messages</a>
+          </li>
+          <li>
+            <a href="/friends">
+              <span class="fa fa-users"></span>Friends</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+              <% if user_signed_in? %>
+              <a href="/about"><li>Hello: <%= current_user.email %></li></a>
+
+
+              <li><%= link_to 'Profile', edit_user_registration_path %></li>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            <ul class="dropdown-menu" role="menu">
+
+            </ul>
+
+        <% else %>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+        </div>
+      </div>
+    </nav>
+  </header>

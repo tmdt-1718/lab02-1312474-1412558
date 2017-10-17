@@ -12,8 +12,4 @@
  *
  *= require_tree .
  *= require_self
-
  */
-@import 'style'; body{
-   min-width: 600px;
- }

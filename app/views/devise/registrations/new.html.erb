@@ -1,56 +1,45 @@
-<!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Login/Logout animation concept</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<div class="col-md-3">
+  
+</div>
+<div class="col-md-3">
+  
 
-    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<h2>Sign up</h2>
 
-    <link rel="stylesheet" href="/stylesheets/style.scss">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
 
-    <link href="<%= image_path("logo.png") %>" rel="shortcut icon" />
+<div class="form-group">
+  <%= f.label :fullname %><br/>
+  <%= f.text_field :fullname, autofocus: true, class: "form-control" %>
+</div>
 
-  </head>
-  <body>
-    <div class="cont">
-      <div class="demo">
-        <div class="login">
-          <div class="login__form">
-            <div class="login_check">
-              <img src="<%= image_path("logo.png") %>" style="width:200px; height:200px;">
-            </div>
-            <div class="signup__row">
-              <h2>Sign Up</h2>
-                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                  <%= devise_error_messages! %>
-                  <div class="field">
-                    <%= f.text_field :hoten, autofocus: true, placeholder: "Full name" %>
-                  </div>
+<div class="form-group">
+  <%= f.label :email %><br/>
+  <%= f.email_field :email, autofocus: true, class: "form-control" %>
+</div>
 
-                  <div class="field">
-                    <%= f.email_field :email, autofocus: true, placeholder: "email@gmail.com" %>
-                  </div>
+<div class="form-group">
+  <%= f.label :password %>
+  <% if @minimum_password_length %>
+  <em>(<%= @minimum_password_length %>
+    characters minimum)</em>
+  <% end %><br/>
+  <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+</div>
 
-                  <div class="field">
-                    <%= f.password_field :password, autocomplete: "off", placeholder: "password" %><br />
+<div class="form-group">
+  <%= f.label :password_confirmation %><br/>
+  <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+</div>
 
-                  </div>
+<div class="actions">
+  <%= f.submit "Sign up", class: "btn btn-primary" %>
+</div>
+<% end %>
 
-                  <div class="field">
-                    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "password_confirmation" %>
-                  </div>
-
-                  <div class="actions">
-                    <%= f.submit "Sign up" %>
-                  </div>
-                <% end %>
-
-                <%= render "devise/shared/links" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+<%= render "devise/shared/links" %>
+</div>
+<div class="col-md-3">
+  
+</div>

@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+before_action :authenticate_user!,only: [:inbox, :sent]
+  def index
+  end
+
   def inbox
     @active = :inbox
   end
@@ -18,6 +22,7 @@ class MessagesController < ApplicationController
   def drafts
     @active = :drafts
   end
+
   def show
     #if params[:mess_id].blank?
     "hgfjhgjhjghjghjgh"
