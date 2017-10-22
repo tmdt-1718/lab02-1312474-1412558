@@ -1,0 +1,3 @@
+class Tablefriend < ApplicationRecord
+
+end
