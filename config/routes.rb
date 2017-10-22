@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'friends/index'
 
   get 'messages/index'
-
+  get 'friends/addfriend'
+  get 'friends/unfriend'  
   get 'home', to: 'home#index'
   get 'friends', to: 'friends#index'
 
