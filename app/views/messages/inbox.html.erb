@@ -1,6 +1,5 @@
 <div class="container">
   <div class="mail-box">
-    <%= render "modal-showmess"%>
     <%= render partial: 'left-side' %>
     <aside class="lg-side">
       <div class="inbox-head">
@@ -15,116 +14,32 @@
         </form>
       </div>
       <div class="inbox-body">
-        <div class="mail-option">
-          <div class="btn-group">
-            <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown" href="#" class="btn mini tooltips">
-              <i class=" fa fa-refresh"></i>
-            </a>
-          </div>
-          <ul class="unstyled inbox-pagination">
-            <li>
-              <span>1-10 of 17</span>
-            </li>
-            <li>
-              <a class="np-btn" href="#">
-                <i class="fa fa-angle-left  pagination-left"></i>
-              </a>
-            </li>
-            <li>
-              <a class="np-btn" href="#">
-                <i class="fa fa-angle-right pagination-right"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
         <table class="table table-inbox table-hover">
-          <thead>
+          <tbody>
             <tr>
               <th>From</th>
               <th>Subject</th>
-              <th></th>
-              <th>Received Time</th>
+              <th>Received At</th>
+              <th>Action</th>
             </tr>
-          </thead>
-          <tbody>
-            <tr class="unread" data-id="1">
-              <td class="view-message  dont-show">PHPClass</td>
-              <td class="view-message">Added a new class: Login Class Fast Site</td>
-              <td class="view-message  inbox-small-cells">
-                <i class="fa fa-paperclip"></i>
-              </td>
-              <td class="view-message  text-right">9:27 AM</td>
-            </tr>
-            <tr class="unread" data-id="2">
-              <td class="view-message dont-show">Google Webmaster</td>
-              <td class="view-message">Improve the search presence of WebSite</td>
-              <td class="view-message inbox-small-cells"></td>
-              <td class="view-message text-right">March 15</td>
-            </tr>
-            <tr class="" data-id="3">
-              <td class="view-message dont-show">LinkedIn Pulse</td>
-              <td class="view-message">The One Sign Your Co-Workder Will Stab</td>
-              <td class="view-message inbox-small-cells">
-                <i class="fa fa-paperclip"></i>
-              </td>
-              <td class="view-message text-right">Feb 19</td>
-            </tr>
-            <tr class="">
-              <td class="view-message dont-show">Drupal Community</td>
-              <td class="view-message view-message">Welcome to the Drupal Community</td>
-              <td class="view-message inbox-small-cells"></td>
-              <td class="view-message text-right">March 04</td>
-            </tr>
-            <tr class="">
-              <td class="view-message dont-show">Twitter</td>
-              <td class="view-message">Your Twitter password has been changed</td>
-              <td class="view-message inbox-small-cells"></td>
-              <td class="view-message text-right">April 07</td>
-            </tr>
-            <tr class="">
-              <td class="view-message dont-show">InternetSeer Website Monitoring</td>
-              <td class="view-message">http://golddesigner.org/ Performance Report</td>
-              <td class="view-message inbox-small-cells"></td>
-              <td class="view-message text-right">July 14</td>
-            </tr>
-            <tr class="">
-              <td class="view-message dont-show">AddMe.com</td>
-              <td class="view-message">Submit Your Website to the AddMe Business Directory</td>
-              <td class="view-message inbox-small-cells"></td>
-              <td class="view-message text-right">August 10</td>
-            </tr>
-            <tr class="">
-              <td class="view-message dont-show">Terri Rexer, S P N</td>
-              <td class="view-message view-message">Forget Google AdWords: Un-Limited Clicks fo</td>
-              <td class="view-message inbox-small-cells">
-                <i class="fa fa-paperclip"></i>
-              </td>
-              <td class="view-message text-right">April 14</td>
-            </tr>
-            <tr class="">
-              <td class="view-message dont-show">Bertina</td>
-              <td class="view-message">IMPORTANT: Don't lose your domains!</td>
-              <td class="view-message inbox-small-cells">
-                <i class="fa fa-paperclip"></i>
-              </td>
-              <td class="view-message text-right">June 16</td>
-            </tr>
-            <tr class="">
-              <td class="view-message dont-show">Laura Gaffin, S P N</td>
-              <td class="view-message">Your Website On Google (Higher Rankings Are Better)</td>
-              <td class="view-message inbox-small-cells"></td>
-              <td class="view-message text-right">August 10</td>
-            </tr>
-            <tr class="">
-              <td class="view-message dont-show">Facebook</td>
-              <td class="view-message view-message">Alireza Zare Login faild</td>
-              <td class="view-message inbox-small-cells">
-                <i class="fa fa-paperclip"></i>
-              </td>
-              <td class="view-message text-right">feb 14</td>
-            </tr>
-          </tbody>
-        </table>
+            <% @messages.each do |m| %>
+            <% if m.read %>
+            <tr class="" data-id="<%= m.id %>">
+            <% else %>
+              <tr class="unread" data-id="<%= m.id %>">
+                <% end %>
+                <td class="view-message"><%= m.user_sender.fullname %></td>
+                <td class="view-message"><%= m.subject%></td>
+                <td class="view-message"><%=time_ago_in_words( m.created_at)%></td>
+                <% if m.read %>
+                <td><%= link_to "Read", m , data: { confirm: 'You readed this messages, you want to read agian?'} %></td>
+                <% else %>
+                <td><%= link_to "Read", m %></td>
+                <% end %>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
       </div>
     </aside>
   </div>

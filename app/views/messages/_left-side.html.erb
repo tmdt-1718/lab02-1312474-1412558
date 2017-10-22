@@ -1,18 +1,18 @@
 <aside class="sm-side" id="left-side">
-  <%= render "modal-compose"%>
+<%= link_to  "New Message", new_message_path, class: "btn btn-compose" %>
   <ul class="inbox-nav inbox-divider">
     <li class="<%= active_page(:inbox) %>">
       <a href="inbox">
         <i class="fa fa-inbox"></i>
         Inbox
-        <span class="label label-danger pull-right">2</span>
+        <span class="label label-danger pull-right"><%= @count_unread_inbox%></span>
       </a>
     </li>
     <li class="<%= active_page(:sent) %>">
       <a href="sent">
         <i class="fa fa-rocket"></i>
         Sent Mail
-        <span class="label label-info pull-right">30</span>
+        <span class="label label-primary pull-right"><%= @count_unread_sent%></span>
       </a>
     </li>
     <li class="<%= active_page(:important) %>">
