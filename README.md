@@ -4,9 +4,9 @@
 
 Thành viên:
 * [x] **1412558** Phạm Quốc Toàn (1412558)
-* [ ] **1312474** Tên sinh viên 2 (tên tài khoản github)
+* [x] **1312474** Tên sinh viên 2 (tên tài khoản github)
 
-URL: **URL hosting của bài tập**
+URL: https://murmuring-shore-73472.herokuapp.com/
 
 ## Yêu cầu
 
