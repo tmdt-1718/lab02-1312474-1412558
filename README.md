@@ -14,9 +14,9 @@ Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm v
 Yêu cầu **GIT**:
 * [x] Sử dụng GIT theo [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
 Yêu cầu **bắt buộc**
-* [ ] Đăng ký tài khoản bằng email, password, và tên.  (**MSSV**)
-* [ ] Đăng nhập bằng email và password. (**MSSV**)
-* [ ] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi. (**MSSV**)
+* [x] Đăng ký tài khoản bằng email, password, và tên.  (**MSSV**)
+* [x] Đăng nhập bằng email và password. (**MSSV**)
+* [x] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi. (**MSSV**)
 * [x] Tin nhắn chưa đọc phải được làm nổi bật hơn các tin nhắn khác. (**1412558**)
 * [ ] Nhấn vào nút "xem danh sách bạn" sẽ chuyển người dùng đến trang liệt kê danh sách người dùng cùng với các chức năng thêm bạn. (**MSSV**)
 * [x] Nhấn nút "tạo tin nhắn" sẽ chuyển sang giao diện cho phép người dùng gửi tin nhắn cho người dùng trong danh sách bạn bè. Người gửi phải nằm trong danh sách bạn bè và cho phép người dùng chọn qua dropdown. (**MSSV**)

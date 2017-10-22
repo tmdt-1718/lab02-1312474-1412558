@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="mail-box">
+    <%= render partial: 'left-side' %>
+    <aside class="lg-side">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Detail Message</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" class="form-horizontal">
+              <% if @message %>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">From</label>
+                <div class="col-lg-10">
+                  <label class="control-label" id="lbfrom">
+                    <a href="#"><%= @message.user_sender.fullname + " - " + @message.user_sender.email %></a>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label">To</label>
+                <div class="col-lg-10">
+                  <label class="control-label" id="lbto">
+                    <a href="#"><%= @message.user_receiver.fullname + " - " + @message.user_receiver.email %></a>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Created at</label>
+                <div class="col-lg-10">
+                  <label class="control-label" id="lbsubject"><%=time_ago_in_words(@message.created_at)%></label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Subject</label>
+                <div class="col-lg-10">
+                  <label class="control-label" id="lbsubject"><%= @message.subject %></label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Message</label>
+                <div class="col-lg-10">
+                  <textarea rows="10" cols="30" class="form-control" id="txtMess" name="" id="txtcontent"><%= @message.body %></textarea>
+                </div>
+              </div>
+              <% end %>
+            </form>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
