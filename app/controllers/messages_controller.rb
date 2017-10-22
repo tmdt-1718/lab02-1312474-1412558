@@ -24,7 +24,20 @@ before_action :authenticate_user!
 
   def new
     # @friends = User.where.not(id: current_user.id)
-@friends = User.all
+    @users = User.where.not(id: current_user.id)
+
+    @temp = Tablefriend.where(id_acc: current_user.id)
+    friendArr = []
+    @temp.each do |u|
+      friendArr.push(u.id_friend)
+    end
+
+    @temp = Tablefriend.where(id_friend: current_user.id)
+    @temp.each do |u|
+      friendArr.push(u.id_acc)
+    end
+
+    @friends = User.where('id in (?)', friendArr)
     @message = Message.new
   end
 
