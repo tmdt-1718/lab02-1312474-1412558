@@ -29,19 +29,4 @@
 </div>
 <%= render "shared/footer"%>
 </body>
-<script>
-$(document).ready(function () {
-  $('table > tbody > tr').on('click', function () {
-    var mess_id = $(this).attr('data-id')
-    alert(mess_id)
-    mess_id = $("#lbfrom").text("daaaaaaaaaaa");
-    alert(mess_id)
-
-    //   $.ajax({   url: "/messages/show",   type: "GET",   dataType: "script",   data: {"mess_id": mess_id},   success: function(){     alert("ok"); }) });
-    $("#myModal-showMess").modal();
-
-    //  alert($(this).closest('tr').find('td:first').text()); if(data == 'something'){ Do something
-  })
-});
-</script>
 </html>
