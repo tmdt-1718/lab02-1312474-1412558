@@ -1,0 +1,9 @@
+<p>
+    A new message was sent to you
+  </p>
+  <blockquote>
+    Subject: <em> <%= @message.subject %></em>
+  </blockquote>
+  <p>
+    To read this message, please <%= link_to 'Click Me', @message %>.
+  </p>

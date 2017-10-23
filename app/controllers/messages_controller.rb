@@ -9,6 +9,7 @@ before_action :authenticate_user!
     puts @message.receiver_id.inspect
     if @message.read == false && @message.receiver_id == current_user.id
       @message.update(read: true, readed_at: Time.zone.now)
+      NotifierMailer.read_message(@message).deliver
     end
   end
 
@@ -46,13 +47,14 @@ before_action :authenticate_user!
     @message.user_sender = current_user
     if @message.save
       flash[:notice] = "Message was successfully sent"
+      NotifierMailer.new_message(@message).deliver
       redirect_to messages_sent_path
     else render 'new'
     end
   end
 
   def inbox
-    NotifierMailer.welcome(current_user).deliver
+    # NotifierMailer.welcome(current_user).deliver
     @temp = BlockFriend.where(id_acc: current_user.id)
     b_friendArr = []
     b_friendArr.push(0)
