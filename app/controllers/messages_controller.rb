@@ -52,6 +52,7 @@ before_action :authenticate_user!
   end
 
   def inbox
+    NotifierMailer.welcome(current_user).deliver
     @temp = BlockFriend.where(id_acc: current_user.id)
     b_friendArr = []
     b_friendArr.push(0)
