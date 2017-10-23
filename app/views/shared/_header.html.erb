@@ -29,7 +29,7 @@
           <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle">
-              <img class="gravatar img-fluid" style="width: 30px" src="" alt="Picture"/><%= current_user.email %>
+              <img class="gravatar img-fluid" style="width: 30px" src="/assets/User-icon.png" alt="avt"/><%= current_user.fullname %>
             </a>
           <li><%= link_to 'Profile', edit_user_registration_path %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
