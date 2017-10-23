@@ -10,13 +10,13 @@ class NotifierMailer < ApplicationMailer
         @message = message
 
         mail to: @message.user_receiver.email,
-            subject: "[You have new email in Email app]"
+            subject: "[You have new message in AppMail]"
     end
 
     def read_message(message)
         @message = message
         mail to: @message.user_sender.email,
-            subject: "[ Inform read email ]"
+            subject: "[ Inform read message in AppMail]"
     end
 
 end
