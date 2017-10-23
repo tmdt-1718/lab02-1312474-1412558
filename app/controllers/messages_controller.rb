@@ -52,8 +52,15 @@ before_action :authenticate_user!
   end
 
   def inbox
-    @messages = Message.where(receiver_id: current_user.id).all.order('created_at DESC')
-    @count_unread_inbox = Message.where(receiver_id: current_user.id, read: false).count
+    @temp = BlockFriend.where(id_acc: current_user.id)
+    b_friendArr = []
+    b_friendArr.push(0)
+    @temp.each do |u|
+      b_friendArr.push(u.id_friend)
+    end
+
+    @messages = Message.where('sender_id not in (?) and receiver_id = (?)',b_friendArr,current_user.id).all.order('created_at DESC')
+    @count_unread_inbox = Message.where(receiver_id: current_user.id, read: false).where('sender_id not in (?)',b_friendArr).count
     @count_unread_sent = Message.where(sender_id: current_user.id, read: false).count
     @active = :inbox
   end
