@@ -14,7 +14,7 @@ class FriendsController < ApplicationController
     end
 
     @Tablefriends = User.where('id in (?)', friendArr)
-
+    @block_friends = BlockFriend.where(id_acc: current_user.id)
   end
 
   def addfriend
@@ -28,7 +28,22 @@ class FriendsController < ApplicationController
   def unfriend
     Tablefriend.where(id_acc: current_user.id ,id_friend: params[:id_friend]).destroy_all
     Tablefriend.where(id_acc: params[:id_friend], id_friend: current_user.id).destroy_all
+    BlockFriend.where(id_acc: current_user.id ,id_friend: params[:id_friend]).destroy_all
     flash[:notice] = "Unfriend is successed"
+    redirect_to '/friends/index'
+  end
+
+  def block
+    @block_friend = BlockFriend.new(id_acc: current_user.id, id_friend: params[:id_friend])
+    if @block_friend.save
+      flash[:notice] = "Block friend is successed"
+    end
+    redirect_to '/friends/index'
+  end
+
+  def unblock
+    BlockFriend.where(id_acc: current_user.id ,id_friend: params[:id_friend]).destroy_all
+    flash[:notice] = "Unblock is successed"
     redirect_to '/friends/index'
   end
 

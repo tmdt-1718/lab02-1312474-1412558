@@ -1,29 +1,45 @@
 <div class="container">
   <h1>Friends</h1>
   <table class="table">
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Status</th>
-      </tr>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+    </tr>
     <% @users.each do |user| %>
-        <tr>
-            <% tag = true %>
-            <td><%= user.fullname %></td>
-            <td><%= user.email %></td>
-            <td>
-              <% @Tablefriends.each do |tablefriend| %>
-                <%- if (user.id == tablefriend.id) %>
-                <%= link_to "Unfriend", friends_unfriend_path(:id_friend => user.id), class: "btn btn-danger" %>
-                      <% tag = false %>
-                      <% break %>
-                <% end -%>
+    <tr>
+      <% tag = true %>
+      <td><%= user.fullname %></td>
+      <td><%= user.email %></td>
+      <td>
+      <% @Tablefriends.each do |tablefriend| %>
+
+        <%- if (user.id == tablefriend.id) %>
+            <%= link_to "Unfriend", friends_unfriend_path(:id_friend => user.id), class: "btn btn-danger" %>
+            <% tag = false %>
+
+
+            <% flag = true%>
+            <% @block_friends.each do |b_friend| %>
+              <% if (tablefriend.id == b_friend.id_friend) %>
+                <%= link_to "UnBlock", friends_unblock_path(:id_friend => user.id), class: "btn btn-success" %>
+                <% flag = false%>
+                <% break %>
               <% end %>
-              <% if tag %>
-              <%= link_to "Add Friend", friends_addfriend_path(:id_friend => user.id), class: "btn btn-primary" %>
-              <%end %>
-            </td>
-        </tr>
+            <% end %>
+            <% if flag %>
+              <%= link_to "Block", friends_block_path(:id_friend => user.id), class: "btn btn-warning" %>
+            <%end %>
+            <% break %>
+        <% end -%>
+
+      <% end %>
+
+      <% if tag %>
+        <%= link_to "Add Friend", friends_addfriend_path(:id_friend => user.id), class: "btn btn-primary" %>
+      <%end %>
+      </td>
+    </tr>
     <% end %>
   </table>
 </div>

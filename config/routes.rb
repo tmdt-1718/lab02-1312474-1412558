@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get 'messages/inbox', to: 'messages#inbox'
   get 'messages/sent', to: 'messages#sent'
   get 'messages/show', to: 'messages#show'
+  get 'friends/block'
+  get 'friends/unblock'
   resources :messages do
     collection do
       get 'getmess'
@@ -37,5 +39,5 @@ Rails.application.routes.draw do
 
 
 
-  
+
 end
