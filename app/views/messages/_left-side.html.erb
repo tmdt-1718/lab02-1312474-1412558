@@ -2,18 +2,18 @@
 <%= link_to  "New Message", new_message_path, class: "btn btn-compose" %>
   <ul class="inbox-nav inbox-divider">
     <li class="<%= active_page(:inbox) %>">
-      <a href="inbox">
+       <%= link_to  messages_inbox_path do %>
         <i class="fa fa-inbox"></i>
         Inbox
         <span class="label label-danger pull-right"><%= @count_unread_inbox%></span>
-      </a>
+      <% end %>
     </li>
     <li class="<%= active_page(:sent) %>">
-      <a href="sent">
+      <%= link_to  messages_sent_path do %>
         <i class="fa fa-rocket"></i>
         Sent Mail
         <span class="label label-primary pull-right"><%= @count_unread_sent%></span>
-      </a>
+      <% end %>
     </li>
     <li class="<%= active_page(:important) %>">
       <a href="#">
