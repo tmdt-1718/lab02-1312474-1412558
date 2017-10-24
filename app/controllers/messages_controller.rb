@@ -43,14 +43,31 @@ before_action :authenticate_user!
   end
 
   def create
-    @message = Message.new(message_params)
-    @message.user_sender = current_user
-    if @message.save
-      flash[:notice] = "Message was successfully sent"
-      NotifierMailer.new_message(@message).deliver
-      redirect_to messages_sent_path
-    else render 'new'
+    # @message = Message.new(message_params)
+    # @message.user_sender = current_user
+    # if @message.save
+    #   flash[:notice] = "Message was successfully sent"
+    #   NotifierMailer.new_message(@message).deliver
+    #   redirect_to messages_sent_path
+    # else render 'new'
+    # end
+    params[:message][:receiver_id].each do |id|
+      if !id.empty?
+        @message = Message.new
+        @message.sender_id = current_user.id
+        @message.subject = params[:message][:subject]
+        @message.body = params[:message][:body]
+        @message.receiver_id = id
+        if @message.save
+          flash[:notice] = "Message was successfully sent"
+          NotifierMailer.new_message(@message).deliver
+        else
+          render 'new'
+        end
+      end
     end
+    redirect_to messages_sent_path
+
   end
 
   def inbox
@@ -88,7 +105,7 @@ before_action :authenticate_user!
   end
 
   private
-    def message_params
-      params.require(:message).permit(:receiver_id, :body, :subject)
-    end
+    # def message_params
+    #   params.require(:message).permit(:receiver_ids [], :body, :subject)
+    # end
 end

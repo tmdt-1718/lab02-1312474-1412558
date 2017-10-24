@@ -26,7 +26,7 @@
             <div class="form-group">
               <label class="col-lg-2 control-label">To</label>
               <div class="col-lg-10">
-                <%= f.select(:receiver_id, @friends.collect {|p| [ p.fullname + " - " + p.email, p.id ]}, { include_blank: false }, class: "form-control select") %>
+                <%= collection_select(:message, :receiver_id, @friends, :id, :fullname, {}, {:multiple => true, include_blank: false, class: "ui fluid  selection dropdown", id: "select-receiver_id",:prompt => 'Please select the friends'}) %>
               </div>
             </div>
 

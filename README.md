@@ -26,19 +26,19 @@ Yêu cầu **bắt buộc**
 
 Yêu cầu **không bắt buộc**:
 * [ ] Người dùng có thể gửi hình ảnh đính kèm theo thông điệp. (**MSSV**)
-* [ ] Người dùng có thể gửi tin nhắn đến nhiều người dùng cùng lúc. (**MSSV**)
+* [ ] Khi người dùng kéo xuống cuối trang, các tin nhắn tiếp theo sẽ tự động hiển thị hoặc có nút nhấn "Xem thêm tin nhắn" để nạp thêm danh sách tin nhắn. (**MSSV**)
+* [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận. (**MSSV**)
 * [x] Người dùng có thể đăng nhập với Facebook. (**1312474**)
 * [x] Người dùng có thể xóa người dùng khác ra khỏi danh sách bạn. (**1312474**)
 * [x] Người dùng có thể block người khác. Sau khi block, người dùng sẽ không nhận được tin nhắn từ người bị block gửi nữa. (**1412558**)
 * [x] Người dùng có thể unblock người dùng khác. (**1412558**)
-* [ ] Khi người dùng kéo xuống cuối trang, các tin nhắn tiếp theo sẽ tự động hiển thị hoặc có nút nhấn "Xem thêm tin nhắn" để nạp thêm danh sách tin nhắn. (**MSSV**)
 * [x] Người dùng sẽ nhận được email thông báo khi họ nhận được tin nhắn cùng với link để xem tin nhắn. (**1412558**)
 * [x] Người dùng sẽ nhận được email khi người nhận đã đọc tin nhắn. (**1412558**)
-* [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận. (**MSSV**)
+* [x] Người dùng có thể gửi tin nhắn đến nhiều người dùng cùng lúc. (**1412558**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 * [x] Báo số lượng tin nhắn mà người nhận chưa đọc. (**1412558**)
-* [x] Báo số lượng tin nhắn chưa được đọc cho người gửi biết. (**1412558**)
+* [x] Báo số lượng tin nhắn đã gửi mà chưa được đọc cho người gửi biết. (**1412558**)
 
 ## Demo
 
