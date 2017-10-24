@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # default
-    devise_for :users
+    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
     root 'messages#inbox'
     get 'home', to: 'home#index'
     get 'friends', to: 'friends#index'
