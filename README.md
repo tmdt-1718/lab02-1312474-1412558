@@ -14,8 +14,8 @@ Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm v
 Yêu cầu **GIT**:
 * [x] Sử dụng GIT theo [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
 Yêu cầu **bắt buộc**
-* [x] Đăng ký tài khoản bằng email, password, và tên.  (**MSSV**)
-* [x] Đăng nhập bằng email và password. (**MSSV**)
+* [x] Đăng ký tài khoản bằng email, password, và tên.  (**1312474**)
+* [x] Đăng nhập bằng email và password. (**1312474**)
 * [x] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi. (**MSSV**)
 * [x] Nhấn vào nút "xem danh sách bạn" sẽ chuyển người dùng đến trang liệt kê danh sách người dùng cùng với các chức năng thêm bạn. (**1312474**)
 * [x] Tin nhắn chưa đọc phải được làm nổi bật hơn các tin nhắn khác. (**1412558**)
@@ -27,7 +27,7 @@ Yêu cầu **bắt buộc**
 Yêu cầu **không bắt buộc**:
 * [ ] Người dùng có thể gửi hình ảnh đính kèm theo thông điệp. (**MSSV**)
 * [ ] Người dùng có thể gửi tin nhắn đến nhiều người dùng cùng lúc. (**MSSV**)
-* [ ] Người dùng có thể đăng nhập với Facebook. (**MSSV**)
+* [ ] Người dùng có thể đăng nhập với Facebook. (**1312474**)
 * [x] Người dùng có thể block người khác. Sau khi block, người dùng sẽ không nhận được tin nhắn từ người bị block gửi nữa. (**MSSV**)
 * [x] Người dùng có thể unblock người dùng khác. (**MSSV**)
 * [x] Người dùng có thể xóa người dùng khác ra khỏi danh sách bạn. (**1312474**)
