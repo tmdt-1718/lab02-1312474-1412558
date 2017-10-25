@@ -11,8 +11,10 @@ URL: https://murmuring-shore-73472.herokuapp.com/
 ## Yêu cầu
 
 Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm vào chức năng theo mẫu. Mục nào ko có MSSV là tính điểm theo nhóm. Cần sắp xếp các chức năng bên dưới theo thứ tự MSSV đã thực hiện.
+
 Yêu cầu **GIT**:
 * [x] Sử dụng GIT theo [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
+
 Yêu cầu **bắt buộc**
 * [x] Đăng ký tài khoản bằng email, password, và tên.  (**1312474**)
 * [x] Đăng nhập bằng email và password. (**1312474**)
